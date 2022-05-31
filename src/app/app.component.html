@@ -1,8 +1,9 @@
 <div [style.padding.px]="20">
-  <h1>ngx-scanner-qrcode</h1>
+  <h1>Vikelaia QR Scanner</h1>
 
   <!-- ngx-scanner-qrcode -->
   <ngx-scanner-qrcode
+    id="scanner"
     #action="scanner"
     (data)="output = $event"
     (error)="onError($event)"
@@ -17,6 +18,7 @@
   <!-- toggleCamera -->
   <button
     (click)="action.toggleCamera()"
+    id="camera-button"
     class="btn"
     [class.btn-info]="!action.isStart"
     [class.btn-warning]="action.isStart"

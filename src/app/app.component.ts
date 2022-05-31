@@ -11,4 +11,6 @@ export class AppComponent {
   public onError(e:any): void {
     alert(e);
   }
+
+  
 }
