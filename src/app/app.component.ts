@@ -12,14 +12,14 @@ export class AppComponent implements OnInit {
   shownButton = Buttons.SCAN;
 
   scannerEnabled = false;
-  plainText!: string;
+
   encryptText = 'lalala';
-  encPassword!: string;
   decPassword = 'aasda';
-  conversionEncryptOutput!: string;
   conversionDecryptOutput!: string;
 
   scannerHasResult = false;
+
+  correctResult = false;
 
   ngOnInit() {
     // action.toggleCamera()
@@ -51,18 +51,19 @@ export class AppComponent implements OnInit {
 
     if (this.conversionDecryptOutput === this.encryptText) {
       this.scannerHasResult = true;
-      this.shownButton = Buttons.CONTINUE;
     }
+
+    this.shownButton = Buttons.RESCAN;
   }
 
-  continueScanning() {
+  reScan() {
     this.scannerHasResult = false;
-    this.disableScanner();
+    this.shownButton = Buttons.STOP;
   }
 }
 
 enum Buttons {
   SCAN,
   STOP,
-  CONTINUE,
+  RESCAN,
 }

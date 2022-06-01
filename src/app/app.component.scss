@@ -45,7 +45,11 @@
   border-color: #0f4c5c;
   border-radius: 5px;
   border-width: 5vw;
-  background-color: green;
+  background-color: white;
+  background: url('../assets/checkIcon.png') 0% 0% no-repeat padding-box;
+  background-size: 80% 80%;
+  background-position-x: center;
+  background-position-y: center;
 }
 
 .mainButton {

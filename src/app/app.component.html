@@ -7,7 +7,7 @@
   >
   </zxing-scanner>
 
-  <div *ngIf="!scannerEnabled" id="scannerOverlay"></div>
+  <div *ngIf="!scannerEnabled && !scannerHasResult" id="scannerOverlay"></div>
   <div *ngIf="scannerHasResult" id="scannerSuccess"></div>
 
   <!-- <div id="checkDiv"></div> -->
@@ -20,11 +20,7 @@
     <div id="label">STOP</div>
   </div>
 
-  <div
-    *ngIf="shownButton === 2"
-    class="mainButton"
-    (click)="continueScanning()"
-  >
-    <div id="label">CONTINUE</div>
+  <div *ngIf="shownButton === 2" class="mainButton" (click)="reScan()">
+    <div id="label">CONFIRM</div>
   </div>
 </div>
