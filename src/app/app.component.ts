@@ -49,9 +49,11 @@ export class AppComponent implements OnInit {
       this.decPassword.trim()
     ).toString(CryptoJS.enc.Utf8);
 
+    this.scannerHasResult = true;
+
     if (this.conversionDecryptOutput === this.encryptText) {
-      this.scannerHasResult = true;
-    }
+      this.correctResult = true;
+    } else this.correctResult = false;
 
     this.shownButton = Buttons.RESCAN;
   }

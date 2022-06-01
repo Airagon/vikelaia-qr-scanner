@@ -8,7 +8,8 @@
   </zxing-scanner>
 
   <div *ngIf="!scannerEnabled && !scannerHasResult" id="scannerOverlay"></div>
-  <div *ngIf="scannerHasResult" id="scannerSuccess"></div>
+  <div *ngIf="scannerHasResult && correctResult" id="scannerSuccess"></div>
+  <div *ngIf="scannerHasResult && !correctResult" id="scannerFail"></div>
 
   <!-- <div id="checkDiv"></div> -->
 
