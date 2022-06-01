@@ -1,5 +1,9 @@
-p {
-  font-family: Lato;
+#scanner {
+  position: absolute;
+  width: 50vw;
+  height: 50vw;
+  left: 25%;
+  top: 20%;
 }
 
 #camera-button {
@@ -8,12 +12,5 @@ p {
   width: 25vw;
   height: 25vw;
   bottom: 15%;
-  left: 32.5%;
-}
-
-#scanner {
-  position: absolute;
-  width: 90%;
-  height: 40%;
-  left: 5%;
+  left: 37.5%;
 }
