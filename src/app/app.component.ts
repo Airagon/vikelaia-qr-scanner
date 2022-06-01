@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import * as CryptoJS from 'crypto-js';
 
 @Component({
   selector: 'app-root',
@@ -11,6 +12,12 @@ export class AppComponent implements OnInit {
   shownButton = Buttons.SCAN;
 
   scannerEnabled = false;
+  plainText!: string;
+  encryptText!: string;
+  encPassword!: string;
+  decPassword!: string;
+  conversionEncryptOutput!: string;
+  conversionDecryptOutput!: string;
 
   ngOnInit() {
     // action.toggleCamera()
@@ -32,6 +39,14 @@ export class AppComponent implements OnInit {
   disableScanner() {
     this.scannerEnabled = false;
     this.shownButton = Buttons.SCAN;
+  }
+
+  scanSuccessHandler($event) {
+    this.conversionDecryptOutput = CryptoJS.AES.decrypt(
+      $event.trim(),
+      this.decPassword.trim()
+    ).toString(CryptoJS.enc.Utf8);
+    alert(this.conversionDecryptOutput);
   }
 }
 

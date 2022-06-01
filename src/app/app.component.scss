@@ -19,6 +19,22 @@
   background-color: #5f0f40;
 }
 
+#scannerOverlay {
+  position: absolute;
+  width: 60vw;
+  height: 60vw;
+  left: 15%;
+  top: 20%;
+  border-style: solid;
+  border-color: #0f4c5c;
+  border-radius: 5px;
+  border-width: 5vw;
+  background: url('../assets/qrIcon.png') 0% 0% no-repeat padding-box;
+  background-size: 100% 100%;
+  background-position-x: center;
+  background-position-y: center;
+}
+
 .mainButton {
   position: absolute;
 

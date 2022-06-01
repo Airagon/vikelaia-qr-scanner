@@ -2,6 +2,7 @@
   <zxing-scanner
     id="scanner"
     (scanSuccess)="onCodeResult($event)"
+    (scanSuccess)="scanSuccessHandler($event)"
     [enable]="scannerEnabled"
   >
   </zxing-scanner>
