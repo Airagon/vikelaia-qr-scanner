@@ -7,14 +7,36 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
   title = 'vikelaia-qr-scanner';
+  qrResultString: string;
+  shownButton = Buttons.SCAN;
 
-  public output!: any;
-
-  public onError(e: any): void {
-    alert(e);
-  }
+  scannerEnabled = false;
 
   ngOnInit() {
     // action.toggleCamera()
   }
+
+  clearResult(): void {
+    this.qrResultString = null;
+  }
+
+  onCodeResult(resultString: string) {
+    this.qrResultString = resultString;
+  }
+
+  enableScanner() {
+    this.scannerEnabled = true;
+    this.shownButton = Buttons.STOP;
+  }
+
+  disableScanner() {
+    this.scannerEnabled = false;
+    this.shownButton = Buttons.SCAN;
+  }
+}
+
+enum Buttons {
+  SCAN,
+  STOP,
+  CONTINUE,
 }

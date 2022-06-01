@@ -1,12 +1,22 @@
 <div id="wrapper">
-  <zxing-scanner id="scanner"> </zxing-scanner>
+  <zxing-scanner
+    id="scanner"
+    (scanSuccess)="onCodeResult($event)"
+    [enable]="scannerEnabled"
+  >
+  </zxing-scanner>
 
-  <div *ngIf="output" id="checkDiv"></div>
+  <!-- <div id="checkDiv"></div> -->
 
-  <div id="camera-button">
+  <div *ngIf="shownButton === 0" class="mainButton" (click)="enableScanner()">
     <div id="label">SCAN</div>
-    <!-- <div id="label">LOAGING</div>
+  </div>
+
+  <div *ngIf="shownButton === 1" class="mainButton" (click)="disableScanner()">
     <div id="label">STOP</div>
-    <div id="label">CONTINUE</div> -->
+  </div>
+
+  <div *ngIf="shownButton === 2" class="mainButton" (click)="enableScanner()">
+    <div id="label">CONTINUE</div>
   </div>
 </div>
