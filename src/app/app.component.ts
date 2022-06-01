@@ -55,7 +55,7 @@ export class AppComponent implements OnInit {
       this.correctResult = true;
     } else this.correctResult = false;
 
-    this.shownButton = Buttons.RESCAN;
+    this.shownButton = Buttons.CONFIRM;
   }
 
   reScan() {
@@ -67,5 +67,5 @@ export class AppComponent implements OnInit {
 enum Buttons {
   SCAN,
   STOP,
-  RESCAN,
+  CONFIRM,
 }
