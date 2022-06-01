@@ -35,6 +35,19 @@
   background-position-y: center;
 }
 
+#scannerSuccess {
+  position: absolute;
+  width: 60vw;
+  height: 60vw;
+  left: 15%;
+  top: 20%;
+  border-style: solid;
+  border-color: #0f4c5c;
+  border-radius: 5px;
+  border-width: 5vw;
+  background-color: green;
+}
+
 .mainButton {
   position: absolute;
 
