@@ -1,3 +1,7 @@
+#wrapper {
+  background-color: #e9dc6d;
+}
+
 #scanner {
   position: absolute;
   width: 60vw;
@@ -5,7 +9,7 @@
   left: 15%;
   top: 20%;
   border-style: solid;
-  border-color: rgb(148, 148, 148);
+  border-color: #0f4c5c;
   border-radius: 5px;
   border-width: 5vw;
 }
@@ -13,8 +17,29 @@
 #camera-button {
   position: absolute;
 
-  width: 25vw;
-  height: 25vw;
-  bottom: 15%;
-  left: 37.5%;
+  width: 40%;
+  height: 10%;
+
+  left: 30%;
+  top: 63.33%;
+
+  background: #5f0f40 0% 0% no-repeat padding-box;
+  box-shadow: 0px 0px 15px #00000033;
+  border-radius: 50px;
+}
+
+#label {
+  position: absolute;
+
+  height: 40%;
+  width: 100%;
+
+  top: 30%;
+
+  text-align: center;
+  font: normal normal 600 24px/32px Segoe UI;
+  font-size: 6.25vw;
+  letter-spacing: 0px;
+  color: #fff;
+  opacity: 1;
 }
