@@ -6,6 +6,8 @@
   >
   </zxing-scanner>
 
+  <div *ngIf="!scannerEnabled" id="scannerOverlay"></div>
+
   <!-- <div id="checkDiv"></div> -->
 
   <div *ngIf="shownButton === 0" class="mainButton" (click)="enableScanner()">
