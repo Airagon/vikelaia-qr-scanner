@@ -1,38 +1,30 @@
-<div [style.padding.px]="20">
-  <h1>Vikelaia QR Scanner</h1>
+<ngx-scanner-qrcode
+  id="scanner"
+  #action="scanner"
+  (data)="output = $event"
+  (error)="onError($event)"
+></ngx-scanner-qrcode>
 
-  <!-- ngx-scanner-qrcode -->
-  <ngx-scanner-qrcode
-    id="scanner"
-    #action="scanner"
-    (data)="output = $event"
-    (error)="onError($event)"
-  ></ngx-scanner-qrcode>
+<p class="data">{{ output }}</p>
 
-  <!-- data  -->
-  <p class="data">{{ output }}</p>
+<p *ngIf="action.isLoading">⌛ Loading video...</p>
 
-  <!-- Loading -->
-  <p *ngIf="action.isLoading">⌛ Loading video...</p>
-
-  <!-- toggleCamera -->
-  <button
-    (click)="action.toggleCamera()"
-    id="camera-button"
-    class="btn"
-    [class.btn-info]="!action.isStart"
-    [class.btn-warning]="action.isStart"
-    [disabled]="action.isLoading"
-  >
-    <img
-      *ngIf="!action.isStart"
-      src="https://img.icons8.com/ios/50/000000/no-camera--v2.png"
-      width="30px"
-    />
-    <img
-      *ngIf="action.isStart"
-      src="https://img.icons8.com/ios/50/000000/no-camera--v1.png"
-      width="30px"
-    />
-  </button>
-</div>
+<button
+  (click)="action.toggleCamera()"
+  id="camera-button"
+  class="btn"
+  [class.btn-info]="!action.isStart"
+  [class.btn-warning]="action.isStart"
+  [disabled]="action.isLoading"
+>
+  <img
+    *ngIf="!action.isStart"
+    src="https://img.icons8.com/ios/50/000000/no-camera--v2.png"
+    width="30px"
+  />
+  <img
+    *ngIf="action.isStart"
+    src="https://img.icons8.com/ios/50/000000/no-camera--v1.png"
+    width="30px"
+  />
+</button>
