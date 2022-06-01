@@ -7,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
   title = 'vikelaia-qr-scanner';
+
   public output!: any;
+
   public onError(e: any): void {
     alert(e);
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    // action.toggleCamera()
+  }
 }

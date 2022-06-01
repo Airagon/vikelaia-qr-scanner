@@ -8,18 +8,9 @@
 
   <p class="data">{{ output }}</p>
 
-  <p *ngIf="action.isLoading">⌛ Loading video...</p>
-
-  <div
-    (click)="action.toggleCamera()"
-    id="camera-button"
-    class="btn"
-    [class.btn-info]="!action.isStart"
-    [class.btn-warning]="action.isStart"
-  >
-    <div id="label">SCAN</div>
+  <div (click)="action.toggleCamera()" id="camera-button">
+    <div *ngIf="!action.isStart && !action.isLoading" id="label">SCAN</div>
+    <div *ngIf="action.isLoading" id="label">LOAGING</div>
+    <div *ngIf="action.isStart && !action.isLoading" id="label">STOP</div>
   </div>
 </div>
-
-<!-- *ngIf="!action.isStart" -->
-<!-- [disabled]="action.isLoading" -->
