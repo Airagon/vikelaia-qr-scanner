@@ -6,11 +6,16 @@
     (error)="onError($event)"
   ></ngx-scanner-qrcode>
 
-  <p class="data">{{ output }}</p>
+  <div *ngIf="output" id="checkDiv"></div>
 
   <div (click)="action.toggleCamera()" id="camera-button">
-    <div *ngIf="!action.isStart && !action.isLoading" id="label">SCAN</div>
+    <div *ngIf="!action.isStart && !action.isLoading && !output" id="label">
+      SCAN
+    </div>
     <div *ngIf="action.isLoading" id="label">LOAGING</div>
-    <div *ngIf="action.isStart && !action.isLoading" id="label">STOP</div>
+    <div *ngIf="action.isStart && !action.isLoading && !output" id="label">
+      STOP
+    </div>
+    <div *ngIf="output" id="label">CONTINUE</div>
   </div>
 </div>

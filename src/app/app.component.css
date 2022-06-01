@@ -1,7 +1,3 @@
-#wrapper {
-  background-color: #e9dc6d;
-}
-
 #scanner {
   position: absolute;
   width: 60vw;
@@ -12,6 +8,15 @@
   border-color: #0f4c5c;
   border-radius: 5px;
   border-width: 5vw;
+}
+
+#checkDiv {
+  position: absolute;
+  width: 70vw;
+  height: 70vw;
+  left: 15%;
+  top: 20%;
+  background-color: #5f0f40;
 }
 
 #camera-button {
