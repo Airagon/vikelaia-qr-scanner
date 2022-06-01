@@ -1,21 +1,12 @@
 <div id="wrapper">
-  <ngx-scanner-qrcode
-    id="scanner"
-    #action="scanner"
-    (data)="output = $event"
-    (error)="onError($event)"
-  ></ngx-scanner-qrcode>
+  <zxing-scanner id="scanner"> </zxing-scanner>
 
   <div *ngIf="output" id="checkDiv"></div>
 
-  <div (click)="action.toggleCamera()" id="camera-button">
-    <div *ngIf="!action.isStart && !action.isLoading && !output" id="label">
-      SCAN
-    </div>
-    <div *ngIf="action.isLoading" id="label">LOAGING</div>
-    <div *ngIf="action.isStart && !action.isLoading && !output" id="label">
-      STOP
-    </div>
-    <div *ngIf="output" id="label">CONTINUE</div>
+  <div id="camera-button">
+    <div id="label">SCAN</div>
+    <!-- <div id="label">LOAGING</div>
+    <div id="label">STOP</div>
+    <div id="label">CONTINUE</div> -->
   </div>
 </div>
