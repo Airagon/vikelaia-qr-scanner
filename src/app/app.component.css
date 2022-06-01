@@ -1,9 +1,13 @@
 #scanner {
   position: absolute;
-  width: 50vw;
-  height: 50vw;
-  left: 25%;
+  width: 60vw;
+  height: 60vw;
+  left: 15%;
   top: 20%;
+  border-style: solid;
+  border-color: rgb(148, 148, 148);
+  border-radius: 5px;
+  border-width: 5vw;
 }
 
 #camera-button {
