@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import * as CryptoJS from 'crypto-js';
-import QR_Service from 'src/app/qr.service';
+import { Injectable } from '@angular/core';
+import { HttpHeaders, HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +14,13 @@ export class AppComponent implements OnInit {
   qrResultString: string;
   shownButton = Buttons.SCAN;
 
-  constructor(private QRservice: QR_Service) {}
+  private baseUrl: string = 'http://139.91.186.68:3000';
+
+  constructor(private http: HttpClient) {}
+
+  getQR(qr: string): Observable<{ QR: QR_Code }> {
+    return this.http.get<{ QR: QR_Code }>(`${this.baseUrl}/QRcodes/${qr}`);
+  }
 
   scannerEnabled = false;
 
@@ -55,7 +63,7 @@ export class AppComponent implements OnInit {
     this.scannerHasResult = true;
 
     if (this.conversionDecryptOutput === this.encryptText) {
-      this.QRservice.getQR(this.conversionDecryptOutput).subscribe((res) => {
+      this.getQR(this.conversionDecryptOutput).subscribe((res: any) => {
         if (res.isValid) this.correctResult = true;
         else {
           this.correctResult = false;
@@ -76,4 +84,11 @@ enum Buttons {
   SCAN,
   STOP,
   CONFIRM,
+}
+
+interface QR_Code {
+  code: string;
+  dateGen: string;
+  isUsed: boolean;
+  dateUsed: string;
 }
