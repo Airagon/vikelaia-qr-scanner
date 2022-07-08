@@ -45,11 +45,9 @@ export class AppComponent implements OnInit {
 
   scanSuccessHandler($event) {
     this.conversionDecryptOutput = CryptoJS.AES.decrypt(
-      $event.trim(),
+      $event.trim().replace('*', '/'),
       this.decPassword.trim()
-    )
-      .toString(CryptoJS.enc.Utf8)
-      .replace('*', '/');
+    ).toString(CryptoJS.enc.Utf8);
 
     this.scannerHasResult = true;
 
