@@ -55,7 +55,12 @@ export class AppComponent implements OnInit {
     this.scannerHasResult = true;
 
     if (this.conversionDecryptOutput === this.encryptText) {
-      this.correctResult = true;
+      this.QRservice.getQR(this.conversionDecryptOutput).subscribe((res) => {
+        if (res.isValid) this.correctResult = true;
+        else {
+          this.correctResult = false;
+        }
+      });
     } else this.correctResult = false;
 
     this.shownButton = Buttons.CONFIRM;
