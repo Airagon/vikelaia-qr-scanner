@@ -5,7 +5,6 @@
   "dependencies": {
     "@angular/animations": "^13.2.0",
     "@angular/common": "^13.2.0",
-    "@angular/common/http": "*",
     "@angular/compiler": "^13.2.0",
     "@angular/core": "^13.2.0",
     "@angular/forms": "^13.2.0",
@@ -18,8 +17,7 @@
     "crypto-js": "^4.1.1",
     "rxjs": "^7.5.2",
     "tslib": "^2.3.1",
-    "zone.js": "^0.11.4",
-    "zxing/ngx-scanner": "*"
+    "zone.js": "^0.11.4"
   },
   "scripts": {
     "ng": "ng",

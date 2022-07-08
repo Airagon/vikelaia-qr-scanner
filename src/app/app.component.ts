@@ -62,13 +62,15 @@ export class AppComponent implements OnInit {
     this.scannerHasResult = true;
 
     if (this.conversionDecryptOutput === this.encryptText) {
-      this.getQR(this.conversionDecryptOutput).subscribe( async (res: any) => {
-        alert(res);
-        if (res.isValid) this.correctResult = true;
-        else {
-          this.correctResult = false;
+      await this.getQR(this.conversionDecryptOutput).subscribe(
+        async (res: any) => {
+          alert('SSSS' + res);
+          if (res.isValid) this.correctResult = true;
+          else {
+            this.correctResult = false;
+          }
         }
-      });
+      );
     }
 
     this.shownButton = Buttons.CONFIRM;
