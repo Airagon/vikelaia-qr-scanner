@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as CryptoJS from 'crypto-js';
-import { Injectable } from '@angular/core';
-import { HttpHeaders, HttpClient } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Component({
