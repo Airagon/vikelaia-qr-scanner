@@ -53,7 +53,7 @@ export class AppComponent implements OnInit {
     this.shownButton = Buttons.SCAN;
   }
 
-  scanSuccessHandler($event) {
+  async scanSuccessHandler($event) {
     this.conversionDecryptOutput = CryptoJS.AES.decrypt(
       $event.trim().replace('*', '/'),
       this.decPassword.trim()
@@ -62,13 +62,14 @@ export class AppComponent implements OnInit {
     this.scannerHasResult = true;
 
     if (this.conversionDecryptOutput === this.encryptText) {
-      this.getQR(this.conversionDecryptOutput).subscribe((res: any) => {
+      this.getQR(this.conversionDecryptOutput).subscribe( async (res: any) => {
+        alert(res);
         if (res.isValid) this.correctResult = true;
         else {
           this.correctResult = false;
         }
       });
-    } else this.correctResult = false;
+    }
 
     this.shownButton = Buttons.CONFIRM;
   }
