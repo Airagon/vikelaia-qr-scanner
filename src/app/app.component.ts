@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as CryptoJS from 'crypto-js';
+import QR_Service from 'src/app/qr.service';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +11,8 @@ export class AppComponent implements OnInit {
   title = 'vikelaia-qr-scanner';
   qrResultString: string;
   shownButton = Buttons.SCAN;
+
+  constructor(private QRservice: QR_Service) {}
 
   scannerEnabled = false;
 
